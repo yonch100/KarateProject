@@ -1,0 +1,6 @@
+Feature: get of requres page
+
+  Scenario: get list users
+    Given url is 'https://reqres.in/api/users?page=2'
+    When methos is GET
+    Then status 200

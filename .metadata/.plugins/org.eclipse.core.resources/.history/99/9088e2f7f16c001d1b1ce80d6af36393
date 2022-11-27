@@ -1,0 +1,11 @@
+Feature: put update
+
+  Background: 
+    * url 'https://reqres.in/api'
+
+  Scenario: put update
+    Given path '/users/2'
+    And request {"name": "Omar", "job": "Qa member",}
+    When method PUT
+    Then status 200
+    And print response

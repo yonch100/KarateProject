@@ -1,0 +1,24 @@
+Feature: post create user
+
+  Background: 
+    * url 'https://reqres.in/api'
+    * header Accept = 'application/json'
+    * def responseFile = read("postCreate_response.json")
+
+  Scenario: post create user
+    Given path '/users'
+    
+    And def projectPath = karate.properties['user.dir']
+    And print projectPath
+    And def filePath = projectPath + '/src/test/java/data/postCreate_body.json'
+    And print filePath
+    And def requestBody = read("postCreate_body.json")
+    
+    And request requestBody
+    #And request body {"name": "omar", "job": "qa member"}
+    When method POST
+    Then status 201
+    And match response == responseFile
+    And match $ == responseFile
+    #And match response == {"createdAt": "#ignore", "name": "omar", "id": "#string", "job": "qa member"}
+    And print response

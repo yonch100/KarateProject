@@ -1,0 +1,16 @@
+   
+Feature: post register unsuccessful
+
+  Background: 
+    * url 'https://reqres.in/api'
+    * header Accept = 'application/json'
+    * def requestFile = read("classpath:data/noRegister_request.json")
+    * def responseFile = read("classpath:data/register_response.json")
+    
+    Scenario: post register unsuccessful
+    Given path '/register'
+    And request requestFile
+    When method POST
+    Then status 400
+    And print response
+    And match response contains{"error": "Missing password"}

@@ -1,0 +1,20 @@
+1669332500265	Delete element
+1669332726582	Delete element
+1669332729694	Delete element
+1669332733445	Delete element
+1669333657995	Delete element
+1669334849349	Rename package 'get'
+1669335068650	Delete element
+1669335170311	Rename resource 'listResource'
+1669353435177	Rename resource 'listResource.feature'
+1669353449447	Rename resource 'listUsers.feature'
+1669356616755	Delete element
+1669357274142	Copy file
+1669358235027	Move file
+1669397338791	Move file
+1669399152204	Rename resource 'postCreate_body.json'
+1669399642966	Rename resource 'putUpdate'
+1669407116075	Rename resource 'patchUpdate'
+1669412075146	Rename resource 'register.json'
+1669413638684	Rename resource 'postRegUnsuccesful'
+1669419773693	Rename resource 'login.json'

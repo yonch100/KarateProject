@@ -1,0 +1,6 @@
+Feature: post create user
+
+  Background: 
+    * url 'https://reqres.in/api'
+    * header Accept = 'application/json'
+    * def requestFile = read("classpath:data/register.json")

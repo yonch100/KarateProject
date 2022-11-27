@@ -1,0 +1,12 @@
+Feature: post register successful
+
+  Background: 
+    * url 'https://reqres.in/api'
+    * header Accept = 'application/json'
+    * def requestFile = read("classpath:data/register.json")
+    
+    Scenario: post register successful
+    Given path '/register'
+    And request requestFile
+    When method POST
+    Then status 200

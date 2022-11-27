@@ -1,0 +1,19 @@
+Feature: post create user
+
+  Background: 
+    * url 'https://reqres.in/api'
+    * header Accept = 'application/json'
+    * def responseFile = read("classpath:data/postCreate_response.json")
+    * def requestFile = read("classpath:data/postCreate_request.json")
+
+  Scenario: post create user
+    Given path '/users'
+    #Request
+    And def projectPath = karate.properties['user.dir']
+    And request requestFile
+    When method POST
+    Then status 201
+    #Match
+    And match response == responseFile
+    And match $ == responseFile
+    And print response

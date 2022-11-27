@@ -1,0 +1,7 @@
+Feature: post login unsuccessful
+
+  Background: 
+    * url 'https://reqres.in/api'
+    * header Accept = 'application/json'
+    * def requestFile = read("classpath:data/register_request.json")
+    * def responseFile = read("classpath:data/register_response.json")

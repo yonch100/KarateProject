@@ -1,0 +1,13 @@
+Feature: post create user
+
+  Background: 
+    * url 'https://reqres.in/api'
+    * header Accept = 'application/json'
+
+  Scenario: post create user
+    Given path '/users'
+    And request {"name": "omar", "job": "qa member"}
+    When method POST
+    Then status 201
+    And match response == {"createdAt": "#ignore", "name": "omar", "id": "#string", "job": "qa member"}
+    And print response

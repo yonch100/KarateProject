@@ -1,0 +1,12 @@
+Feature: patch update
+
+  Background: 
+    * url 'https://reqres.in/api'
+
+  Scenario: put update
+    Given path '/users/2'
+    And request {"name": "Omar", "job": "Qa member",}
+    When method PATCH
+    Then status 200
+    And print response
+    And print responseStatus

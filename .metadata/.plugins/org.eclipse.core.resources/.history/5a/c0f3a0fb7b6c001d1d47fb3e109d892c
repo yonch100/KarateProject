@@ -1,0 +1,12 @@
+Feature:  get list resources
+
+Background: 
+* url 'https://reqres.in'
+* header Accept = 'application/json'
+
+Scenario: get list resources
+
+Given url '/api/unknown'
+When method GET
+Then status 200
+And print response

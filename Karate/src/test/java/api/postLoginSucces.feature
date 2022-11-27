@@ -1,0 +1,16 @@
+Feature: post login successful
+
+  Background: 
+    * url 'https://reqres.in/api'
+    * header Accept = 'application/json'
+    * def requestFile = read("classpath:data/login_succes.json")
+    * def responseFile = read("classpath:data/login_response.json")
+
+    Scenario: post login successful
+    Given path '/login'
+    And request requestFile
+    When method POST
+    Then status 200
+    And match response == responseFile
+    And print response
+    And match $.token == "QpwL5tke4Pnpja7X4"

@@ -1,0 +1,11 @@
+Feature: get list users
+Background: 
+* url 'https://reqres.in/api'
+* header Accept = 'application/json'
+
+Scenario: get list users
+
+Given url '/users/2'
+When method GET
+Then status 200
+And print response
